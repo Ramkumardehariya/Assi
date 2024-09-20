@@ -1,22 +1,22 @@
-// package list;
+
 
 public class DLinkedList{
     Node head;
     Node tail;
 
     static class Node{
-        int data;
+        Object data;
         Node next;
         Node prev;
     
-        Node(int data){
+        Node(Object data){
             this.data = data;
             this.next = null;
             this.prev = null;
         }
     }
 
-    public static DLinkedList insertAtHead(DLinkedList list, int data){
+    public static DLinkedList insertAtHead(DLinkedList list, Object data){
         Node temp = new Node(data);
         
         if(list.head == null){
@@ -31,7 +31,7 @@ public class DLinkedList{
         return list;
     }
 
-    public static DLinkedList insertAtTail(DLinkedList list, int data){
+    public static DLinkedList insertAtTail(DLinkedList list, Object data){
         Node temp = new Node(data);
         
         if(list.head == null){
@@ -50,7 +50,7 @@ public class DLinkedList{
         return list;
     }
 
-    public static DLinkedList insertAtPositioin(DLinkedList list, int data, int position){
+    public static DLinkedList insertAtPositioin(DLinkedList list, Object data, int position){
         if(position == 1){
             insertAtHead(list, data);
             return list;
@@ -115,7 +115,7 @@ public class DLinkedList{
         return list;
     }
 
-    public static DLinkedList deleteNodeByData(DLinkedList list, int data){
+    public static DLinkedList deleteNodeByData(DLinkedList list, Object data){
         if(list.head == null){
             return list;
         }

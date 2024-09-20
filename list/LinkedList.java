@@ -6,16 +6,16 @@ public class LinkedList{
     Node tail;
 
     static class Node{
-        int data;
+        Object data;
         Node next;
     
-        Node(int data){
+        Node(Object data){
             this.data = data;
             this.next = null;
         }
     }
 
-    public static LinkedList insertAtHead(LinkedList list, int data){
+    public static LinkedList insertAtHead(LinkedList list, Object data){
         Node temp = new Node(data);
         
         if(list.head == null){
@@ -29,7 +29,7 @@ public class LinkedList{
         return list;
     }
 
-    public static LinkedList insertAtTail(LinkedList list, int data){
+    public static LinkedList insertAtTail(LinkedList list, Object data){
         Node temp = new Node(data);
         
         if(list.head == null){
@@ -47,7 +47,7 @@ public class LinkedList{
         return list;
     }
 
-    public static LinkedList insertAtPositioin(LinkedList list, int data, int position){
+    public static LinkedList insertAtPositioin(LinkedList list, Object data, int position){
         if(position == 1){
             insertAtHead(list, data);
             return list;
@@ -109,7 +109,7 @@ public class LinkedList{
         return list;
     }
 
-    public static LinkedList deleteNodeByData(LinkedList list, int data){
+    public static LinkedList deleteNodeByData(LinkedList list, Object data){
         if(list.head == null){
             return list;
         }
@@ -152,6 +152,7 @@ public class LinkedList{
         list = insertAtHead(list, 20);
         list = insertAtHead(list, 10);
         list = insertAtHead(list, 5);
+        insertAtHead(list, "ramkumar");
         LinkedList.printList(list);
         System.out.println("head is->"+list.head.data);
         System.out.println("tail is -> "+ list.tail.data);
